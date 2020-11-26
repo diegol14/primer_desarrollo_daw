@@ -26,8 +26,8 @@ require '../Funciones_db/Select_usuarios.php';
 
 //Muestra el botón crear  usuario?>
 
-<form action="Form_usuarios.php" method="post">
-	<input name="action" type="hidden" value="nuevo">
+<form action="form_usuarios.php" method="post">
+	<input name="action" type="hidden" value="new">
 	<input type="submit" value="Nuevo"></input>
 </form>
 <br/>
