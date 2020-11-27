@@ -11,7 +11,7 @@ function modifyUsuario() {
     ;
 }
 
-function deleteUsuario($idUsuario) {
+function deleteUsuario($idUsuario, $connm07) {
     echo "Borro usuario con Id:".$idUsuario ;
     $queryDel="DELETE FROM usuarios where Id='$idUsuario'";
     
