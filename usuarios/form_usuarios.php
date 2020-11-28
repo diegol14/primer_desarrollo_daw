@@ -5,10 +5,10 @@ if (!isset($_POST['action'])) {
     $error=true;;
 }
 
-if (!isset($_POST['Id']))  {
+/*if (!isset($_POST['Id']))  {
     header("Location: ../index.php?Id-NoDefinida") ;
     $error=true;
-}else
+}else*/
  ?>
 
 <!DOCTYPE HTML>
@@ -31,16 +31,19 @@ if (!isset($_POST['Id']))  {
    
    
    <h3>Acci&oacute;n a realizar: <?php echo $_POST['action']?></h3>
-   <h3>N&uacute;mero de usuario: <?php echo $_POST['Id']?></h3>
+   <?php if (isset($_POST['Id'])) {?>
+       <h3>N&uacute;mero de usuario: <?php echo $_POST['Id']?></h3> ;
+  <?php  
    
-   <?php 
-   $idUsuario=$_POST['Id'];
+   
+   
+  $idUsuario=$_POST['Id'];} //End if Die
    ?>
    
  <h1>Formulario de usuario</h1> 
  
  <?php 
- $connm07=connection();
+
     switch ($_POST['action']) {
         case 'new':
         createUsuario();
@@ -51,7 +54,7 @@ if (!isset($_POST['Id']))  {
             break;
             
         case 'delete':
-            deleteUsuario($idUsuario,$connm07)   ;
+            deleteUsuario($idUsuario)   ;
             
             break;
         
