@@ -4,7 +4,7 @@
 //Según el manual PHP no tiene "contraindicaciones" aunque por su funcionamiento se deduce que consumenre cursos". 
 require_once '../conexion.php';
 
-require '../Funciones_db/Select_usuarios.php';
+require '../Funciones_bd/Select_usuarios.php';
 
 
 ?>
@@ -27,6 +27,7 @@ require '../Funciones_db/Select_usuarios.php';
 //Muestra el botón crear  usuario?>
 
 <form action="form_usuarios.php" method="post">
+	<input name="Id" type="hidden" value="0">	
 	<input name="action" type="hidden" value="new">
 	<input type="submit" value="Nuevo"></input>
 </form>

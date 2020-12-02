@@ -33,6 +33,7 @@ function Select_usuarios()
                     <tr>
                         <td ><?php  echo $row['Id'] ?> </td>
                         <td> <?php   echo $row["Nombre"] ?></td>
+                        <td> <?php   echo $row["Email"] ?></td>
                          <td> <?php   echo $row["Provincia"] ?></td>
                      </tr>
                   </table>

@@ -2,16 +2,17 @@
 require_once '../conexion.php';
 
 
-function createUsuario(){
+function bd_createUsuario(){
     
+        
     
 }
 
-function modifyUsuario() {
+function bd_modifyUsuario() {
     ;
 }
 
-function deleteUsuario($idUsuario) {
+function bd_deleteUsuario($idUsuario) {
    
     echo "Se va a borrar usuario con Id:".$idUsuario ;
     
