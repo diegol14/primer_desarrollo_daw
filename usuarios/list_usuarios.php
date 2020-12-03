@@ -33,7 +33,7 @@ require '../Funciones_bd/Select_usuarios.php';
 </form>
 <br/>
 <?php
-// En Select_usuaros están modify y delete
+// En Select_usuarios están modify y delete
 Select_usuarios();
 ?>
 

@@ -10,6 +10,10 @@ if (isset($_POST['function_name'])){
     }//End switch
 }//Enf if isset
 
+if (isset($_POST['borrar'])) {
+    bd_deleteUsuario();
+}
+
 
 function bd_createUsuario(){
     
@@ -54,26 +58,28 @@ function bd_modifyUsuario() {
     ;
 }
 
-function bd_deleteUsuario($idUsuario) {
+function bd_deleteUsuario() {
    
-    echo "Se va a borrar usuario con Id:".$idUsuario ;
+    $connM07=connection();
     
-   
-            
-    $connm07=connection();
+    $id_usuario = $_POST['Id'];
     
-   
-            
-    $queryDel="DELETE FROM usuarios where Id='$idUsuario'";
+    $query_del="DELETE FROM usuarios where Id=$id_usuario";
     
-    if ($result = mysqli_query($connm07, $queryDel)) {
-        $affected_rows = mysqli_affected_rows($connm07);
+    $result = $result = mysqli_query($connM07, $query_del);
+      
+    
+    if ($result ) {
+        $affected_rows = mysqli_affected_rows($connM07);
         if ($affected_rows==0) {
             echo "<br/>No se han podido eliminar usuarios" ;
         }//End if affected_rows
-        else{  echo "<br/>Registro/s borrado/s : ".$affected_rows; 
+      
+        else{ 
+            echo "Se borró usuario con Id:".$id_usuario ;
+            echo "<br/>Registro/s borrado/s : ".$affected_rows; 
         }//End else
         }//End if result
-    $result->close();
-    $connm07->close();
+    
+    $connM07->close();
 }//End function
