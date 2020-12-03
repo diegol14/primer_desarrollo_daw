@@ -16,10 +16,11 @@ function Select_usuarios()
     } else {?>
         
         <div class='contenedor-tabla'>
-        <table>
+        <table >
         	<tr>
-        		<td><span class="notranslate">Id</span></td>
-        		<td>Nombre</td>
+        		<td ><span class="notranslate">Id</span></td>
+        		<td  >Nombre</td>
+        		<td width="42%">Email</td>
         		<td>Provincia</td>
         </table>
         
