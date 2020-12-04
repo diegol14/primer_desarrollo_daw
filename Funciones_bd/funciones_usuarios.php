@@ -78,7 +78,7 @@ function bd_deleteUsuario() {
         else{ 
             echo "Se borró usuario con Id:".$id_usuario ;
             echo "<br/>Registro/s borrado/s : ".$affected_rows; 
-        }//End else
+            }//End else
         }//End if result
     
     $connM07->close();

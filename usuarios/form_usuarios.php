@@ -36,8 +36,6 @@ if ((! isset($_POST['action'])) and (! isset($_POST['Id']))) {
 	;
 	<!-- Muestra la Id del usuario a menos que sea nuevo: es 0 y la definirá el auto_increment -->
   <?php
-
-       
     } // End if
     ?>
    
@@ -51,7 +49,7 @@ if ((! isset($_POST['action'])) and (! isset($_POST['Id']))) {
             break;
 
         case 'modify':
-            modify_usuario();
+            form_modify_usuario();
             break;
 
         case 'delete':
@@ -112,11 +110,11 @@ function create_form_usuario()
 			</tr>
 			<tr>
 				<td><label for="masculino">Masculino</label></td>
-				<td><input type="radio" name="Genero" value="m"></td>
+				<td><input type="radio" name="Genero" value='m'></td>
 			</tr>
 			<tr>
 				<td><label for="femenino">Femenino</label></td>
-				<td><input type="radio" name="Genero" value="f"></td>
+				<td><input type="radio" name="Genero" value='f'></td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -132,17 +130,17 @@ function create_form_usuario()
 </html>
 
 <?php
+}
+;
 
-};// End Function create_form_usuario
-
-
-
-function delete_usuario(){
+// End Function create_form_usuario
+function delete_usuario()
+{
     $id_usuario = $_POST['Id'];
     echo "<table><tr<<td>
             <form action='../Funciones_bd/funciones_usuarios.php' method='post'>
-                <p>Usuario a borrar: ".$id_usuario."</p>
-                <input name='Id' type='hidden' value=".$id_usuario.">
+                <p>Usuario a borrar: " . $id_usuario . "</p>
+                <input name='Id' type='hidden' value=" . $id_usuario . ">
                 <input type=submit name='borrar' value='Borrar'>
             </form></td>
             <td><a href='../usuarios/list_usuarios.php' class='button'>Volver sin borrar</a>
@@ -150,5 +148,84 @@ function delete_usuario(){
          </table>";
     ;
 }
+
+// End function delete
+function form_modify_usuario()
+{
+    $id_usuario = $_POST['Id'];
+    $connM07 = connection();
+
+    $myquery = "SELECT * FROM usuarios where Id = $id_usuario";
+
+    $result = mysqli_query($connM07, $myquery);
+
+    while ($row = $result->fetch_assoc()) {
+        ?>
+
+<table>
+	<form action='../Funciones_bd/funciones_usuarios.php' method='post'>
+		<p>Usuario a modificar Id N&uacute;mero: <?php echo $id_usuario ?></p>
+		<tr>
+			<td><label for="Id">Id no modificable</label></td>
+			<td><input type="number" name="Id" 
+				value="<?php echo $row["Id"]; ?>" readonly ></td>
+		</tr>
+		<tr>
+			<td><label for="Nombre">Nombre</label></td>
+			<td><input type="text" name="Nombre"
+				value="<?php echo $row["Nombre"]; ?>" maxlength="50"></td>
+		</tr>
+		<tr>
+			<td><label for="Contrasenia">Contrase&ntilde;a</label></td>
+			<td><input type="password" name="Contrasenia"
+				value="<?php echo $row["Contrasenia"]; ?>" maxlength="20"></td>
+		</tr>
+		<tr>
+				<td><label for="Email">Email</label></td>
+				<td><input type="email" name="Email" maxlength="40"
+				value="<?php echo $row["Email"]; ?>"></td>
+			</tr>
+			<tr>
+				<td><label for="Edad">Edad</label></td>
+				<td><input type="number" name="Edad" maxlength="10"
+				value="<?php echo $row["Edad"]; ?>"></td>
+			</tr>
+			<tr>
+				<td><label for="Fecha_nacimiento">Fecha de nacimiento</label></td>
+				<td><input type="date" name="Fecha_nacimiento" 
+					value="<?php echo $row["Fecha_nacimiento"];?>" maxlength="20"></td>
+			</tr>
+			<tr>
+				<td><label for="Direccion">Direcci&oacute;n</label></td>
+				<td><input type="text" name="Direccion" 
+				value="<?php echo $row["Fecha_nacimiento"];?>"maxlength="100"></td>
+			</tr>
+			<tr>
+				<td><label for="Codigo_Postal">C&oacute;digo Postal </label></td>
+				<td><input type="number" name="Codigo_Postal" maxlength="10"
+					value="<?php echo $row["Codigo_Postal"];?>"></td>
+			<tr>
+				<td><label for="Provincia">Provincia</label></td>
+				<td><input type="text" name="Provincia" 
+				value="<?php echo $row["Codigo_Postal"];?>"maxlength="30"></td>
+			</tr>
+			</tr>
+			<tr>
+				<td><label for="Genero">G&eacute;nero </label></td>
+				<td><input type="text" name="Genero" maxlength="10"
+					value="<?php echo $row["Genero"];?>"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr><td>&nbsp;</td>
+			<td><input name='Id' type='hidden' value=" . $id_usuario . ">
+                <input type=submit name='update' value='modify' align='center'></td>
+             </tr>
+		</form>
+</table><?php
+    }//End while
+} // End function modify
 
 ?>

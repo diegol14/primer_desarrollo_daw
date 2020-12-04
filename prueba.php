@@ -21,4 +21,11 @@ $result=mysqli_query($conn, "SELECT * FROM USUARIOS");
  <td> " . $row['Provincia'] . " </td>
  <td> " . $row['Genero'] . "</td>*/
 
+
+
+ "<tr>
+<td>Row 1: Col 1</td>
+<td>Row 1: Col 2</td>
+</tr>;"
+
 ?>
