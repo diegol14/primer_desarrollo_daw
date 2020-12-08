@@ -1,5 +1,5 @@
 <?php
-include_once 'C:\wamp\www\DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel\Funciones_bd\Select_index_5noticias.php';
+include_once 'conexion.php';
 // funcion que realizaa listado de las ultimas 5 noticias
 function Select_index_5noticias()
 {
