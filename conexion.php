@@ -14,11 +14,12 @@ function connection()
     if (! $connm07) {
         echo "Conecction failed" . mysqli_connect_error() ."C&oacute;digo ". mysqli_connect_errno();
     } else {
+        mysqli_set_charset($connm07, "utf-8");
        return $connm07;
         echo "Conectado a M07";
     }
     
-    mysqli_set_charset($connm07, "utf-8");
+   
     /*
      * Probé con PDO
      * try {

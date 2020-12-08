@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.contenidos{
+	padding-top: 90px;
+}
+
+h1{
+	align: "center";
+}
+h2{
+	align: center;
+}
+
+td{
+	align:left;
+}
+
+#miweb{
+	color: olive;
+	font-size: 20px;
+}
