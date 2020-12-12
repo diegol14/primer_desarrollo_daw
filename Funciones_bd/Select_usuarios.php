@@ -42,14 +42,16 @@ function Select_usuarios()
 							<form action="form_usuarios.php" method="post">
 								<input name="Id" type="hidden" value="<?php echo $row['Id']?>">
 								<input name="action" type="hidden" value="modify"> <input
-									type="submit" value="modify"></input>
+									type="submit" value="modify"
+									style='font-size:1rem;font-weight:bold;color:blue;'></input>
 							</form>
 						</td>
 						<td width='15%'>
 							<form action="form_usuarios.php" method="post">
 								<input name="Id" type="hidden" value="<?php echo $row['Id']?>">
 								<input name="action" type="hidden" value="delete"> <input
-									type="submit" value="delete"></input>
+									type="submit" value="delete"
+									style='font-size:1rem;font-weight:bold;color:red;'></input>
 							</form>
 						</td>
 						<br/>

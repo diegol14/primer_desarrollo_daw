@@ -8,7 +8,7 @@ if (isset($_POST['acceso'])) {
 if (isset($_POST['logout'])) {
     logout_usuario() ;
 }
-?>
+ include 'cabecera_inicio.php';?>
 
 
 
@@ -23,7 +23,9 @@ if (isset($_POST['logout'])) {
 
 </head>
 <body>
-	<header><?php// cabecera_bienvenida();?></header>
+	
+	<?php// include 'cabecera_inicio.php';?>
+	<br/>
 	<h1>Tus Noticias</h1>
 		<form method="post" action="" name="signin-form" autocomplete="off">
 					

@@ -32,7 +32,7 @@ require '../Funciones_bd/Select_noticias.php';
 <form action="form_noticias.php" method="post">
 			<input name="Id" type="hidden" value="0">
 			 <input name="action"	type="hidden" value="new"> 
-			 <input type="submit" value="Nueva"></input>
+			 <input type="submit" value="Nueva"style='font-size:1.2rem;font-weight:bold;color:green;'></input>
 		</form>
 		<br />
 <?php

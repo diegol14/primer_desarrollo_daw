@@ -182,11 +182,13 @@ function create_form_usuario()
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td align="center"><input type="submit" value="Aceptar"></td>
+					<td align="center"><input type="submit" value="Aceptar"
+					style='font-size:1rem;font-weight:bold;color:green;'></td>
 				</tr>
 			</table>
 		</form>
 	</section>
+	<br/<
 </body>
 </html>
 
@@ -199,11 +201,13 @@ function delete_usuario(){
             <form action='../Funciones_bd/funciones_usuarios.php' method='post'>
                 <p>Usuario a borrar: " . $id_usuario . "</p>
                 <input name='Id' type='hidden' value=" . $id_usuario . ">
-                <input type=submit name='borrar' value='Borrar'>
-            </form></td>
+                <br/>
+                <input style='font-size:1rem;font-weight:bold;color:red;' type=submit name='borrar' value='Borrar'>
+            </form></td><br/><br/>
             <td><a href='../usuarios/list_usuarios.php' class='button'>Volver sin borrar</a>
             </td></tr>
-         </table>";
+         </table>
+          <br/>";
     ;
 }// End function delete
 function form_modify_usuario()
@@ -292,12 +296,14 @@ function form_modify_usuario()
 
         echo "<td>
                 <input name='Id' type='hidden' value=" . $id_usuario . ">
-                <input type=submit name='modify' value='modify' align='center'>
+                <input style='font-size:1rem;font-weight:bold;color:blue;'type=submit name='modify' value='modify' align='center'><br/>
 				</td> <td><a href='../usuarios/list_usuarios.php' class='button'>Volver sin modificar</a>
             </td>
 	</tr>
 	</form>
-</table>";
+</table>
+
+";
     } // End while
 } // End function modify
 

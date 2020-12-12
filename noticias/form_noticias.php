@@ -100,7 +100,8 @@ function create_form_noticia()
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td align="center"><input type="submit" value="Aceptar"></td>
+					<td align="center"><input type="submit" value="Aceptar"
+					style='font-size:1rem;font-weight:bold;color:green;'></td>
 				</tr>
 			</table>
 		</form></div>
@@ -118,8 +119,10 @@ function delete_noticia(){
             <form action='../Funciones_bd/funciones_noticias.php' method='post'>
                 <p>Noticia a borrar: " . $id_noticia . "</p>
                 <input name='Id' type='hidden' value=" . $id_noticia . ">
-                <input type=submit name='borrar' value='Borrar'>
+                <input type=submit name='borrar' value='Borrar'
+                  style='font-size:1rem;font-weight:bold;color:red;'>
             </form></td>
+            <tr><td>&nbsp;</td></tr>
             <td><a href='../noticias/list_noticias.php' class='button'>Volver sin borrar</a>
             </td></tr>
          </table>";
@@ -183,8 +186,11 @@ function form_modify_noticia()
 
         echo "<td>
                 <input name='Id' type='hidden' value=" . $id_noticia . ">
-                <input type=submit name='modify' value='modify' align='center'>
-				</td> <td><a href='../noticias/list_noticiass.php' class='button'>Volver sin modificar</a>
+                <input type=submit name='modify' value='modify' align='center'
+                  style='font-size:1rem;font-weight:bold;color:blue;'>
+				</td>
+                <tr><td>&nbsp;</td></tr>
+                 <td><a href='../noticias/list_noticiass.php' class='button'>Volver sin modificar</a>
             </td>
 	</tr>
 	</form>

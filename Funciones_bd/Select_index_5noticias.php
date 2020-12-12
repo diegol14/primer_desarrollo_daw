@@ -6,7 +6,7 @@ function Select_index_5noticias()
 {
     $connM07 = connection();
 
-    $myquery = "SELECT * FROM noticias ORDER BY Id DESC LIMIT 5";
+    $myquery = "SELECT * FROM noticias ORDER BY Hora_creacion DESC LIMIT 5";
 
     $result = mysqli_query($connM07, $myquery);
 
@@ -25,14 +25,14 @@ function Select_index_5noticias()
 	  <div style="border: 2px solid #ccc; background: #eee;">
 		<div style="font-size: 1.5rem;font-weight: bold;"> <?php   echo $row["Titulo"] ?> </div>
 		<div><?php   echo $row["Contenido"] ?></div>
-		<div><?php   echo $row["Autor"] ?></div>
+		<div style="float:right;"><?php   echo $row["Autor"]." ". $row["Hora_creacion"] ?></div>
 		<div><?php   echo $row["Likes"].'Likes' ?>
 	  <form
 				action='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/Funciones_bd/funciones_noticias.php'
 				method='post'>
 				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
 					name="action" type="hidden" value="like"> <input type="submit"
-					name='like' value="Me gusta"></input>
+					name='like' value="Me gusta" style='font-size:1rem;font-weight:bold;'></input>
 			</form>
 		</div>
 	</div>

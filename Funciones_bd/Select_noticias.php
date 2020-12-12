@@ -47,7 +47,8 @@ function Select_noticias()
 				method='post'>
 				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
 					name="action" type="hidden" value="like"> <input type="submit"
-					name='like' value="Me gusta"></input>
+					name='like' value="Me gusta"
+					style='font-size:1rem;font-weight:bold;'></input>
 			</form>
 		</div>
 		<div><br/></div>
@@ -55,13 +56,15 @@ function Select_noticias()
 			<form  action="form_noticias.php" method="post">
 				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
 					name="action" type="hidden" value="modify"> <input type="submit"
-					value="modify"></input>
+					value="modify"
+					style='font-size:1rem;font-weight:bold;color:blue;'></input>
 			</form>
 		
 			<form action="form_noticias.php" method="post">
 				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
 					name="action" type="hidden" value="delete"> <input type="submit"
-					value="delete"></input>
+					value="delete"
+					style='font-size:1rem;font-weight:bold;'></input>
 			</form>
 		</div>
 	
