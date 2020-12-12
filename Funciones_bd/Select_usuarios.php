@@ -17,46 +17,46 @@ function Select_usuarios()
         echo "N&uacute;mero de usuarios registrados: " . $result->num_rows . "<br/><br/>";
         ?>
 
-<div class='contenedor-tabla'>
-	<table>
+<div style='text-align:center;'>
+	<table style='width:80%;'>
 		<tr>
-			<td><span class="notranslate">Id</span></td>
-			<td>Nombre</td>
-			<td width="42%">Email</td>
-			<td>Provincia</td>
-	
+			<td width='10%'><span class="notranslate">Id</span></td>
+			<td width='20%'>Nombre</td>
+			<td width='20%'>Email</td>
+			<td width='20%'>Provincia</td>
+			<td width='15%'>&nbsp;</td>
+			<td width='15%'>&nbsp;</td>
 	</table>
         
        <?php while ($row=$result->fetch_assoc()) {   /*row=mysqli_fetch_array($result,MYSQLI_ASSOC) también funciona*/ ?> 
             
-     <table>
-		<tr>
-			<td>
-				<table>
+  
+				<table style='width:80%;text-align:center;'>
 
 					<tr>
-						<td><?php  echo $row['Id'] ?> </td>
-						<td> <?php   echo $row["Nombre"] ?></td>
-						<td> <?php   echo $row["Email"] ?></td>
-						<td> <?php   echo $row["Provincia"] ?></td>
-						<td>
+						<td width='10%'><?php  echo $row['Id']." " ?> </td>
+						<td width='20%'> <?php   echo $row["Nombre"]." " ?></td>
+						<td width='20%'> <?php   echo $row["Email"] ." "?></td>
+						<td width='20%'><?php   echo $row["Provincia"]." " ?></td>
+						<td width='15%'>
 							<form action="form_usuarios.php" method="post">
 								<input name="Id" type="hidden" value="<?php echo $row['Id']?>">
 								<input name="action" type="hidden" value="modify"> <input
 									type="submit" value="modify"></input>
 							</form>
 						</td>
-						<td>
+						<td width='15%'>
 							<form action="form_usuarios.php" method="post">
 								<input name="Id" type="hidden" value="<?php echo $row['Id']?>">
 								<input name="action" type="hidden" value="delete"> <input
 									type="submit" value="delete"></input>
 							</form>
 						</td>
-					</tr>
-				</table>
+						<br/>
+				
                 <?php
         } // end while
+       ?> </div><?php 
     } // end else
     $result->close();
     $conn->close();

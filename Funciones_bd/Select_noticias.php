@@ -15,7 +15,7 @@ function Select_noticias()
 {
     $connM07 = connection();
 
-    $myquery = "SELECT * FROM noticias";
+    $myquery = "SELECT * FROM noticias  ORDER BY Id DESC";
 
     $result = mysqli_query($connM07, $myquery);
 
@@ -23,47 +23,48 @@ function Select_noticias()
         echo "Error en la consulta " . mysqli_error() . " C&oacute;digo " . mysqli_connect_errno();
         ;
     } else {
-        echo "N&uacute;mero de noticias registradas: " . $result->num_rows . "<br/><br/>";
+        echo "<h4>N&uacute;mero de noticias registradas: " . $result->num_rows . "</h4><br/><br/>";
         ?>
 
-<div class='contenedor-tabla'>
-	<table width=100%>
-		<tr>
-			<td><span class="notranslate">Id</span></td>
-			<td>T&iacute;tulo</td>
-			<td>Autor</td>
-			<td>Likes</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-	</table>
+<div
+	style="border: 3px solid #ccc; background: #eee; text-align: center;">
+	
 	
 	<?php while ($row=$result->fetch_assoc()) { ?>
 	    
 	  
-				<table width=100%>
-
-					<tr>
-						<td><?php  echo $row['Id'] ?>(Id) </td>
-						<td> <?php   echo $row["Titulo"] ?>-T&iacute;tulo-</td>
-						<td> <?php   echo $row["Autor"] ?>-Autor-</td>
-						<td> <?php   echo $row["Likes"] ?>Likes</td>
-						<td>
-							<form action="form_noticias.php" method="post">
-								<input name="Id" type="hidden" value="<?php echo $row['Id']?>">
-								<input name="action" type="hidden" value="modify"> <input
-									type="submit" value="modify"></input>
-							</form>
-						</td>
-						<td>
-							<form action="form_noticias.php" method="post">
-								<input name="Id" type="hidden" value="<?php echo $row['Id']?>">
-								<input name="action" type="hidden" value="delete"> <input
-									type="submit" value="delete"></input>
-							</form>
-						</td>
-					</tr>
-				</table>	
+		<div style="border: 3px solid #ccc; background: #eee; text-align: center;">
+		
+		<div><?php  echo $row['Id'] ?> (Id) </div>
+		<div style='font-weight:bold; font-size:22px;'> <?php   echo $row["Titulo"] ?></div>
+		<div><?php   echo $row["Contenido"] ?></div>
+		<div style='float:right'> <?php   echo $row["Autor"] ?>-Autor-
+	
+	</div>
+		<div style='float:left'><?php   echo $row["Likes"].'Likes' ?>
+	  <form style=''
+				action='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/Funciones_bd/funciones_noticias.php'
+				method='post'>
+				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
+					name="action" type="hidden" value="like"> <input type="submit"
+					name='like' value="Me gusta"></input>
+			</form>
+		</div>
+		<div><br/></div>
+		<div style='float:center; text-align:center;  display:inline-block;'>
+			<form  action="form_noticias.php" method="post">
+				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
+					name="action" type="hidden" value="modify"> <input type="submit"
+					value="modify"></input>
+			</form>
+		
+			<form action="form_noticias.php" method="post">
+				<input name="Id" type="hidden" value="<?php echo $row['Id']?>"> <input
+					name="action" type="hidden" value="delete"> <input type="submit"
+					value="delete"></input>
+			</form>
+		</div>
+	
 				<?php
         } // end while
     } // end else
@@ -75,7 +76,3 @@ function Select_noticias()
 <!-- </body>
 	
 </html>	 -->
-
-
-	
-	

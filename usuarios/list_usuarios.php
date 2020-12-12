@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION["user1"])){
+header("Location: ../index.php") ;
+}else {
 // utiklizo require_once para no incluir 2 veces la conexion luego.
 // Según el manual PHP no tiene "contraindicaciones" aunque por su funcionamiento se deduce que consumenre cursos".
 require_once '../conexion.php';
@@ -18,7 +21,8 @@ require '../Funciones_bd/Select_usuarios.php';
 <link href='../css/contenidos.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
-   <?php include '../cabecera.php';
+   <?php include_once '../cabecera.php';
+  // cabecera();
 ?>
    <section class='contenidos'>
     
@@ -40,3 +44,11 @@ Select_usuarios();
 
 </body>
 </html>
+<?php 
+;}//end else session
+?>
+
+
+
+
+

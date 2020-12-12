@@ -3,6 +3,7 @@
 <head>
 <link href='../css/header.css' rel='stylesheet' type='text/css' />
 <link href='../css/contenidos.css' rel='stylesheet' type='text/css' />
+<link href='C:\wamp\www\DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel\css\forms.css' rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width; initial-scale=1.0" />
 <title>Form de noticias</title>
 <meta charset="utf-8">
@@ -12,7 +13,7 @@
 <body>
 
 <?php
-
+include_once '../cabecera.php';
 require_once '../Funciones_bd/funciones_noticias.php';
 if ((! isset($_POST['action'])) and (! isset($_POST['Id']))) {
     header("Location: ../index.php?Accion-o-Id-NoDefinida");
@@ -23,9 +24,10 @@ if ((! isset($_POST['action'])) and (! isset($_POST['Id']))) {
 
 	
  <?php
- include_once '../cabecera.php';
+
  
 { // llave del else
+   // cabecera();
  
     ?>
     <section class='contenidos'>
@@ -68,7 +70,8 @@ function create_form_noticia()
 {
     echo "<br/><H2>A&ntilde;adir noticia</H2><br/>";
     ?>
-  <form action="../Funciones_bd/funciones_noticias.php" method="post"
+  <!-- Formulario  que rellena el usuarioy se envía a funciones_noticias.php para ingresarlo en la BD -->
+ <div> <form action="../Funciones_bd/funciones_noticias.php" method="post"
 			autocomplete="off">
 			<input type="hidden" name="function_name" value="bd_create_noticia">
 			
@@ -100,7 +103,7 @@ function create_form_noticia()
 					<td align="center"><input type="submit" value="Aceptar"></td>
 				</tr>
 			</table>
-		</form>
+		</form></div>
 	</section>
 </body>
 </html>
@@ -109,7 +112,7 @@ function create_form_noticia()
 };// End Function create_form_usuario
 
 function delete_noticia(){
-    
+    //Aqui pregunto mediante un formulario si borro o doy la posibilidad de volver
     $id_noticia = $_POST['Id'];
     echo "<table><tr<<td>
             <form action='../Funciones_bd/funciones_noticias.php' method='post'>
@@ -127,7 +130,8 @@ function form_modify_noticia()
 {
     $id_noticia = $_POST['Id'];
     $connM07 = connection();
-    
+  //Primero recupero los datos a modificar con un select where id enviada  
+  //Este formulario tiene campos editables para modificar la noticia en funciones_noticias
     $myquery = "SELECT * FROM noticias where Id = $id_noticia";
 
     $result = mysqli_query($connM07, $myquery);
@@ -188,6 +192,7 @@ function form_modify_noticia()
 		
     } // End while
 } // End function modify
+
 
 ?>
 	

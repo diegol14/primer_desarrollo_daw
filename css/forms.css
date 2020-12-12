@@ -1,0 +1,39 @@
+/*Intenté aplicar estilos a los formularios
+ pero como están dentro de funciones no encontré 
+ como hacerlo y el tiempon apremia*/
+
+@charset "UTF-8";
+
+h1 {
+	text-align: center;
+	color: #00F;
+	border-bottom: dotted #0000FF;
+	width: 50%;
+	margin: auto;
+	font-size: 2rem;
+}
+
+label{
+		width: 160px;
+	display: inline-block;
+	text-align: left;
+	font-size: 1.6rem;
+	
+
+}
+input {
+	border: 2px solid #ccc;
+	font-size: 1.5rem;
+	font-weight: 90;
+	padding: 10px;
+}
+form {
+	margin: 22px auto;
+	padding: 18px;
+	border: 4px solid #ccc;
+	width: 600px;
+	background: #eee;
+}
+div.form {
+	margin: 20px 0;
+}

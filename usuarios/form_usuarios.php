@@ -1,5 +1,6 @@
 <?php
-require_once '../Funciones_bd/funciones_usuarios.php';
+include_once '../cabecera.php';
+include_once '../Funciones_bd/funciones_usuarios.php';
 if ((! isset($_POST['action'])) and (! isset($_POST['Id']))) {
     header("Location: ../index.php?Accion-o-Id-NoDefinida");
     $error = true;
@@ -21,7 +22,8 @@ if ((! isset($_POST['action'])) and (! isset($_POST['Id']))) {
 <body>
 	
  <?php 
- include_once '../cabecera.php';
+
+ //cabecera();
  
  
  { // llave del else

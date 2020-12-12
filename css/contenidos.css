@@ -4,11 +4,21 @@
 	padding-top: 90px;
 }
 
-h1{
-	align: "center";
+
+h1 {
+	text-align: center;
+	color: #00F;
+	border-bottom: dotted #0000FF;
+	width: 50%;
+	margin: auto;
+	font-size: 2rem;
 }
+
 h2{
 	align: center;
+}
+h3{
+	text-align: center;
 }
 
 td{
@@ -18,4 +28,10 @@ td{
 #miweb{
 	color: olive;
 	font-size: 20px;
+}
+div {
+	margin:auto;
+}
+body{
+	background-color:#eff;
 }

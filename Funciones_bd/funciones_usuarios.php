@@ -1,3 +1,13 @@
+<?php
+include_once '../cabecera.php';
+require_once '../conexion.php';
+?>
+
+<!-- En este archivo están las funciones:
+bd_delete_usuario
+bd_create_usuario
+bd_modify_usuario
+bd-login_usuario -->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,12 +20,11 @@
 </head>
 
 <body>
-<?php
-include '../cabecera.php';
-?>
+<?php// cabecera(); ?>
+
 <section class='contenidos'>
 <?php
-require_once '../conexion.php';
+
 
 if (isset($_POST['function_name'])){
     
@@ -182,7 +191,7 @@ function bd_deleteUsuario() {
     
     $query_del="DELETE FROM usuarios where Id=$id_usuario";
     
-    $result = $result = mysqli_query($connM07, $query_del);
+    $result = mysqli_query($connM07, $query_del);
       
     
     if ($result ) {
@@ -199,6 +208,8 @@ function bd_deleteUsuario() {
     
     $connM07->close();
 }//End function modify
+
+
 
 ?>
 </section>
