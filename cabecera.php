@@ -10,11 +10,9 @@
 		<ul>
 			<li><a href='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/index.php'>Inicio</a></li>
 			<li><a
-				href='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/usuarios/list_usuarios.php'>Lista
-					de usuarios</a></li>
+				href='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/usuarios/list_usuarios.php'>Usuarios</a></li>
 			<li><a
-				href='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/noticias/list_noticias.php'>Lista
-					de noticias</a></li>
+				href='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/noticias/list_noticias.php'>Noticias</a></li>
 			<li><form
 					action='/DAW_M07_UF03_PAC03_PereiraSotelo_DiegoLeonel/usuarios/form_usuarios.php'
 					method='post'>
