@@ -7,7 +7,7 @@ require_once '../conexion.php';
 bd_delete_usuario
 bd_create_usuario
 bd_modify_usuario
-bd-login_usuario -->
+ -->
 <!DOCTYPE HTML>
 <html>
 <head>

@@ -190,7 +190,7 @@ function form_modify_noticia()
                   style='font-size:1rem;font-weight:bold;color:blue;'>
 				</td>
                 <tr><td>&nbsp;</td></tr>
-                 <td><a href='../noticias/list_noticiass.php' class='button'>Volver sin modificar</a>
+                 <td><a href='../noticias/list_noticias.php' class='button'>Volver sin modificar</a>
             </td>
 	</tr>
 	</form>
